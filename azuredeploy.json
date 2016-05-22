@@ -207,10 +207,11 @@
                   "properties": {
        	           "publisher": "Microsoft.Compute",
        	           "type": "CustomScriptExtension",
-                     "typeHandlerVersion": "1.2",
+                     "typeHandlerVersion": "1.7",
+                     "autoUpgradeMinorVersion":true,
                      "settings": {
                          "fileUris": [ "[parameters('scriptFile')]" ],
-       	                  "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -file ', parameters('scriptName'), parameters('eclipseUrl'), ' ', parameters('jdkUrl'))]"
+       	                  "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -file ', parameters('scriptName'), ' ', parameters('eclipseUrl'), ' ', parameters('jdkUrl'), ' ', parameters('adminUsername'))]"
                      }
                  }
               }

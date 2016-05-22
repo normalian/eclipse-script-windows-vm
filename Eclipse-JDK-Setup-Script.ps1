@@ -23,6 +23,7 @@ mkdir c:\opt\workspace
 $jdkeclipseHome  = "c:\opt\"
 $eclipseUrl      = $Args[0] # "http://mirrors.neusoft.edu.cn/eclipse/technology/epp/downloads/release/mars/2/eclipse-jee-mars-2-win32-x86_64.zip"
 $jdkUrl          = $Args[1] # "http://azure.azulsystems.com/zulu/zulu8.13.0.5-jdk8.0.72-win_x64.zip"
+$username        = $Args[2] # 
 
 DLUnzip $jdkUrl $jdkeclipseHome
 DLUnzip $eclipseUrl $jdkeclipseHome
@@ -39,8 +40,7 @@ $java_home = $jdkeclipseHome + [System.IO.Path]::GetFileNameWithoutExtension($jd
 
 #Create Eclipse shortcut to Desktop
 $objShell = New-Object -ComObject WScript.Shell
-$strDesktop = [Environment]::GetFolderPath('Desktop')
-$strFileName = $strDesktop + "\Eclipse.lnk"
+$strFileName = "C:\Users\$username\Desktop\Eclipse.lnk"
 $strTargetPath = "$jdkeclipseHome\eclipse\eclipse.exe"
 $arguments = "-data $jdkeclipseHome\workspace"
 $objShortCut = $objShell.CreateShortcut($strFileName)
