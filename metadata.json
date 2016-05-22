@@ -1,0 +1,7 @@
+{
+  "itemDisplayName": "Eclipse and JDK Windows VM for Java development",
+  "description": "This template create Windows Server VM Java development using Eclipse.",
+  "summary": "This template setup JDK and Eclipse",
+  "githubUsername": "normalian",
+  "dateUpdated": "2016-05-22"
+}

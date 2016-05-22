@@ -16,6 +16,8 @@ function DLUnzip {
   Write-Output "expansion zip file... $zipPath"
   $unzipDirObj.CopyHere($zipPathObj.Items())
 }
+
+#create folders for JDK and Eclipse
 mkdir c:\opt
 mkdir c:\opt\workspace
 
@@ -28,17 +30,17 @@ $username        = $Args[2] #
 DLUnzip $jdkUrl $jdkeclipseHome
 DLUnzip $eclipseUrl $jdkeclipseHome
 
-# update PATH environment variable
+# add PATH environment variable
 $user_path = [Environment]::GetEnvironmentVariable('PATH', 'Machine')
 $user_path += ";$jdkeclipseHome" + [System.IO.Path]::GetFileNameWithoutExtension($jdkUrl) + "\bin"
 [Environment]::SetEnvironmentVariable('PATH', $user_path, 'Machine')
 
-# update JAVA_HOME environment variable
+# create JAVA_HOME environment variable
 $java_home = [Environment]::GetEnvironmentVariable('JAVE_HOME', 'Machine')
 $java_home = $jdkeclipseHome + [System.IO.Path]::GetFileNameWithoutExtension($jdkUrl)
 [Environment]::SetEnvironmentVariable('JAVA_HOME', $java_home, 'Machine')
 
-#Create Eclipse shortcut to Desktop
+# Create Eclipse shortcut to Desktop, but below still dosen't work. 
 $objShell = New-Object -ComObject WScript.Shell
 $strFileName = "C:\Users\$username\Desktop\Eclipse.lnk"
 $strTargetPath = "$jdkeclipseHome\eclipse\eclipse.exe"
