@@ -42,7 +42,7 @@ $java_home = $jdkeclipseHome + [System.IO.Path]::GetFileNameWithoutExtension($jd
 
 # Create Eclipse shortcut to Desktop, but below still dosen't work. 
 $objShell = New-Object -ComObject WScript.Shell
-$strFileName = "C:\Users\$username\Desktop\Eclipse.lnk"
+$strFileName = "C:\Users\Public\Desktop\Eclipse.lnk"
 $strTargetPath = "$jdkeclipseHome\eclipse\eclipse.exe"
 $arguments = "-data $jdkeclipseHome\workspace"
 $objShortCut = $objShell.CreateShortcut($strFileName)
