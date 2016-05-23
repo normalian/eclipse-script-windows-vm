@@ -14,4 +14,4 @@ And setup JAVA_HOME and PATH environment variables for launching Eclipse.
 
 
 ## Known Issues and Limitations
-- Eclipse-JDK-Setup-Script.ps1 powershell script can't create shortcut on Desktop for Eclipse still
+- none
